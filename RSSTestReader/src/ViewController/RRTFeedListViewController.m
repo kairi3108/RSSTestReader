@@ -1,29 +1,26 @@
 //
-//  ViewController.m
+//  RRTFeedListViewController.m
 //  RSSTestReader
 //
 //  Created by Yuto on 2018/07/28.
 //  Copyright © 2018年 Yuto. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "RRTFeedListViewController.h"
 
-@interface ViewController ()
+@interface RRTFeedListViewController ()
 
 @end
 
-@implementation ViewController
+@implementation RRTFeedListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 }
-
 
 @end

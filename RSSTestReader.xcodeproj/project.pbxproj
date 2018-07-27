@@ -7,27 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13D6FC02210B713C00B7FFD0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC01210B713C00B7FFD0 /* AppDelegate.m */; };
-		13D6FC05210B713C00B7FFD0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC04210B713C00B7FFD0 /* ViewController.m */; };
+		0674B65A6717B47C62988A61 /* libPods-RSSTestReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7326B3890B99EBF5FE285192 /* libPods-RSSTestReader.a */; };
 		13D6FC08210B713C00B7FFD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D6FC06210B713C00B7FFD0 /* Main.storyboard */; };
 		13D6FC0B210B713C00B7FFD0 /* RSSTestReader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC09210B713C00B7FFD0 /* RSSTestReader.xcdatamodeld */; };
 		13D6FC0D210B714000B7FFD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D6FC0C210B714000B7FFD0 /* Assets.xcassets */; };
 		13D6FC10210B714000B7FFD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D6FC0E210B714000B7FFD0 /* LaunchScreen.storyboard */; };
 		13D6FC13210B714000B7FFD0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC12210B714000B7FFD0 /* main.m */; };
+		13D6FC21210B74A200B7FFD0 /* RRTFeedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC1E210B74A200B7FFD0 /* RRTFeedListViewController.m */; };
+		13D6FC22210B74A200B7FFD0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC1F210B74A200B7FFD0 /* AppDelegate.m */; };
+		13D6FC26210B74E800B7FFD0 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 13D6FC25210B74E800B7FFD0 /* Config.xcconfig */; };
+		13D6FC2A210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC28210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.m */; };
+		13D6FC2B210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D6FC29210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.xib */; };
+		13D6FC2E210B769400B7FFD0 /* RRTRSSFeedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC2D210B769400B7FFD0 /* RRTRSSFeedModel.m */; };
+		13D6FC31210B77CF00B7FFD0 /* RRTFeedEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC30210B77CF00B7FFD0 /* RRTFeedEditViewController.m */; };
+		13D6FC34210B783300B7FFD0 /* RRTSelectArticleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC33210B783300B7FFD0 /* RRTSelectArticleTableViewController.m */; };
+		13D6FC37210B78C700B7FFD0 /* RRTArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC36210B78C700B7FFD0 /* RRTArticleViewController.m */; };
+		13D6FC3A210B78FD00B7FFD0 /* RRTLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC39210B78FD00B7FFD0 /* RRTLoadingViewController.m */; };
+		13D6FC3D210B861B00B7FFD0 /* RRTCommonButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC3C210B861B00B7FFD0 /* RRTCommonButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0340163B4701C6FE29F408C3 /* Pods-RSSTestReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSSTestReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-RSSTestReader/Pods-RSSTestReader.release.xcconfig"; sourceTree = "<group>"; };
 		13D6FBFD210B713C00B7FFD0 /* RSSTestReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSTestReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13D6FC00210B713C00B7FFD0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		13D6FC01210B713C00B7FFD0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		13D6FC03210B713C00B7FFD0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		13D6FC04210B713C00B7FFD0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		13D6FC07210B713C00B7FFD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13D6FC0A210B713C00B7FFD0 /* RSSTestReader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RSSTestReader.xcdatamodel; sourceTree = "<group>"; };
 		13D6FC0C210B714000B7FFD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13D6FC0F210B714000B7FFD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13D6FC11210B714000B7FFD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13D6FC12210B714000B7FFD0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		13D6FC1A210B74A200B7FFD0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = src/AppDelegate.h; sourceTree = "<group>"; };
+		13D6FC1D210B74A200B7FFD0 /* RRTFeedListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRTFeedListViewController.h; sourceTree = "<group>"; };
+		13D6FC1E210B74A200B7FFD0 /* RRTFeedListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTFeedListViewController.m; sourceTree = "<group>"; };
+		13D6FC1F210B74A200B7FFD0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = src/AppDelegate.m; sourceTree = "<group>"; };
+		13D6FC25210B74E800B7FFD0 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		13D6FC27210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTRSSFeedCellTableViewCell.h; sourceTree = "<group>"; };
+		13D6FC28210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTRSSFeedCellTableViewCell.m; sourceTree = "<group>"; };
+		13D6FC29210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRTRSSFeedCellTableViewCell.xib; sourceTree = "<group>"; };
+		13D6FC2C210B769400B7FFD0 /* RRTRSSFeedModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTRSSFeedModel.h; sourceTree = "<group>"; };
+		13D6FC2D210B769400B7FFD0 /* RRTRSSFeedModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTRSSFeedModel.m; sourceTree = "<group>"; };
+		13D6FC2F210B77CF00B7FFD0 /* RRTFeedEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTFeedEditViewController.h; sourceTree = "<group>"; };
+		13D6FC30210B77CF00B7FFD0 /* RRTFeedEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTFeedEditViewController.m; sourceTree = "<group>"; };
+		13D6FC32210B783300B7FFD0 /* RRTSelectArticleTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTSelectArticleTableViewController.h; sourceTree = "<group>"; };
+		13D6FC33210B783300B7FFD0 /* RRTSelectArticleTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTSelectArticleTableViewController.m; sourceTree = "<group>"; };
+		13D6FC35210B78C700B7FFD0 /* RRTArticleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTArticleViewController.h; sourceTree = "<group>"; };
+		13D6FC36210B78C700B7FFD0 /* RRTArticleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTArticleViewController.m; sourceTree = "<group>"; };
+		13D6FC38210B78FD00B7FFD0 /* RRTLoadingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTLoadingViewController.h; sourceTree = "<group>"; };
+		13D6FC39210B78FD00B7FFD0 /* RRTLoadingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTLoadingViewController.m; sourceTree = "<group>"; };
+		13D6FC3B210B861B00B7FFD0 /* RRTCommonButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTCommonButton.h; sourceTree = "<group>"; };
+		13D6FC3C210B861B00B7FFD0 /* RRTCommonButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTCommonButton.m; sourceTree = "<group>"; };
+		7326B3890B99EBF5FE285192 /* libPods-RSSTestReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RSSTestReader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB0ED18C95944B07776FC96D /* Pods-RSSTestReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSSTestReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RSSTestReader/Pods-RSSTestReader.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0674B65A6717B47C62988A61 /* libPods-RSSTestReader.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +76,8 @@
 			children = (
 				13D6FBFF210B713C00B7FFD0 /* RSSTestReader */,
 				13D6FBFE210B713C00B7FFD0 /* Products */,
+				4F998775D37E128F27B725FD /* Pods */,
+				85B1CFCB2C7D4713586C6C73 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,18 +92,87 @@
 		13D6FBFF210B713C00B7FFD0 /* RSSTestReader */ = {
 			isa = PBXGroup;
 			children = (
-				13D6FC00210B713C00B7FFD0 /* AppDelegate.h */,
-				13D6FC01210B713C00B7FFD0 /* AppDelegate.m */,
-				13D6FC03210B713C00B7FFD0 /* ViewController.h */,
-				13D6FC04210B713C00B7FFD0 /* ViewController.m */,
+				13D6FC1A210B74A200B7FFD0 /* AppDelegate.h */,
+				13D6FC1F210B74A200B7FFD0 /* AppDelegate.m */,
+				13D6FC19210B74A200B7FFD0 /* Model */,
+				13D6FC20210B74A200B7FFD0 /* Util */,
+				13D6FC1B210B74A200B7FFD0 /* View */,
+				13D6FC1C210B74A200B7FFD0 /* ViewController */,
 				13D6FC06210B713C00B7FFD0 /* Main.storyboard */,
 				13D6FC0C210B714000B7FFD0 /* Assets.xcassets */,
 				13D6FC0E210B714000B7FFD0 /* LaunchScreen.storyboard */,
 				13D6FC11210B714000B7FFD0 /* Info.plist */,
 				13D6FC12210B714000B7FFD0 /* main.m */,
 				13D6FC09210B713C00B7FFD0 /* RSSTestReader.xcdatamodeld */,
+				13D6FC25210B74E800B7FFD0 /* Config.xcconfig */,
 			);
 			path = RSSTestReader;
+			sourceTree = "<group>";
+		};
+		13D6FC19210B74A200B7FFD0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13D6FC2C210B769400B7FFD0 /* RRTRSSFeedModel.h */,
+				13D6FC2D210B769400B7FFD0 /* RRTRSSFeedModel.m */,
+			);
+			name = Model;
+			path = src/Model;
+			sourceTree = "<group>";
+		};
+		13D6FC1B210B74A200B7FFD0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13D6FC27210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.h */,
+				13D6FC28210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.m */,
+				13D6FC29210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.xib */,
+				13D6FC3B210B861B00B7FFD0 /* RRTCommonButton.h */,
+				13D6FC3C210B861B00B7FFD0 /* RRTCommonButton.m */,
+			);
+			name = View;
+			path = src/View;
+			sourceTree = "<group>";
+		};
+		13D6FC1C210B74A200B7FFD0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				13D6FC1D210B74A200B7FFD0 /* RRTFeedListViewController.h */,
+				13D6FC1E210B74A200B7FFD0 /* RRTFeedListViewController.m */,
+				13D6FC2F210B77CF00B7FFD0 /* RRTFeedEditViewController.h */,
+				13D6FC30210B77CF00B7FFD0 /* RRTFeedEditViewController.m */,
+				13D6FC32210B783300B7FFD0 /* RRTSelectArticleTableViewController.h */,
+				13D6FC33210B783300B7FFD0 /* RRTSelectArticleTableViewController.m */,
+				13D6FC35210B78C700B7FFD0 /* RRTArticleViewController.h */,
+				13D6FC36210B78C700B7FFD0 /* RRTArticleViewController.m */,
+				13D6FC38210B78FD00B7FFD0 /* RRTLoadingViewController.h */,
+				13D6FC39210B78FD00B7FFD0 /* RRTLoadingViewController.m */,
+			);
+			name = ViewController;
+			path = src/ViewController;
+			sourceTree = "<group>";
+		};
+		13D6FC20210B74A200B7FFD0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Util;
+			path = src/Util;
+			sourceTree = "<group>";
+		};
+		4F998775D37E128F27B725FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EB0ED18C95944B07776FC96D /* Pods-RSSTestReader.debug.xcconfig */,
+				0340163B4701C6FE29F408C3 /* Pods-RSSTestReader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		85B1CFCB2C7D4713586C6C73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7326B3890B99EBF5FE285192 /* libPods-RSSTestReader.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,6 +182,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13D6FC16210B714000B7FFD0 /* Build configuration list for PBXNativeTarget "RSSTestReader" */;
 			buildPhases = (
+				F999637B51B52677B1C69ECF /* [CP] Check Pods Manifest.lock */,
 				13D6FBF9210B713C00B7FFD0 /* Sources */,
 				13D6FBFA210B713C00B7FFD0 /* Frameworks */,
 				13D6FBFB210B713C00B7FFD0 /* Resources */,
@@ -100,6 +202,7 @@
 		13D6FBF5210B713C00B7FFD0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = RRT;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Yuto;
 				TargetAttributes = {
@@ -131,6 +234,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13D6FC2B210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.xib in Resources */,
+				13D6FC26210B74E800B7FFD0 /* Config.xcconfig in Resources */,
 				13D6FC10210B714000B7FFD0 /* LaunchScreen.storyboard in Resources */,
 				13D6FC0D210B714000B7FFD0 /* Assets.xcassets in Resources */,
 				13D6FC08210B713C00B7FFD0 /* Main.storyboard in Resources */,
@@ -139,14 +244,42 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F999637B51B52677B1C69ECF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RSSTestReader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		13D6FBF9210B713C00B7FFD0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13D6FC05210B713C00B7FFD0 /* ViewController.m in Sources */,
-				13D6FC02210B713C00B7FFD0 /* AppDelegate.m in Sources */,
+				13D6FC3A210B78FD00B7FFD0 /* RRTLoadingViewController.m in Sources */,
+				13D6FC22210B74A200B7FFD0 /* AppDelegate.m in Sources */,
+				13D6FC3D210B861B00B7FFD0 /* RRTCommonButton.m in Sources */,
+				13D6FC2E210B769400B7FFD0 /* RRTRSSFeedModel.m in Sources */,
+				13D6FC31210B77CF00B7FFD0 /* RRTFeedEditViewController.m in Sources */,
+				13D6FC34210B783300B7FFD0 /* RRTSelectArticleTableViewController.m in Sources */,
+				13D6FC21210B74A200B7FFD0 /* RRTFeedListViewController.m in Sources */,
 				13D6FC13210B714000B7FFD0 /* main.m in Sources */,
+				13D6FC37210B78C700B7FFD0 /* RRTArticleViewController.m in Sources */,
+				13D6FC2A210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.m in Sources */,
 				13D6FC0B210B713C00B7FFD0 /* RSSTestReader.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,6 +308,7 @@
 /* Begin XCBuildConfiguration section */
 		13D6FC14210B714000B7FFD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13D6FC25210B74E800B7FFD0 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -224,7 +358,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -233,6 +367,7 @@
 		};
 		13D6FC15210B714000B7FFD0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13D6FC25210B74E800B7FFD0 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -276,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -285,6 +420,7 @@
 		};
 		13D6FC17210B714000B7FFD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB0ED18C95944B07776FC96D /* Pods-RSSTestReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +438,7 @@
 		};
 		13D6FC18210B714000B7FFD0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0340163B4701C6FE29F408C3 /* Pods-RSSTestReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
