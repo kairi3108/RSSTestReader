@@ -88,16 +88,28 @@
                             [loading dismissViewControllerAnimated:YES completion:^{
                                 UIAlertController *alert = [alertManager networkErrorAlertControllerOnAddFeed:^(UIAlertAction *alertAction) {
                                     // OK
-                                    [weakSelf presentViewController:alert
-                                                           animated:YES
-                                                         completion:nil];
                                 } addAction:^(UIAlertAction *alertAction) {
                                     // Add Anyway
-                                    [weakSelf presentViewController:alert
-                                                           animated:YES
-                                                         completion:nil];
+                                    // タイトル
+                                    NSString *title = weakSelf.titleView.text;
+                                    if (title == nil || title.length == 0) {
+                                        title = @"未設定";
+                                    }
+                                    
+                                    [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+                                        // save
+                                        RSSFeedEntity *feed = [RSSFeedEntity MR_createEntityInContext:localContext];
+                                        [feed setupNextPrimaryKey];
+                                        feed.title = title;
+                                        feed.url = request.url.absoluteString;
+                                        
+                                    } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
+                                        DDLogDebug(@"Coredata result %@, Error : %@", (contextDidSave ? @"SAVE" : @"D'ONT SAVE"), [error description]);
+                                        // dissmiss & back
+                                        [weakSelf.navigationController popViewControllerAnimated:YES];
+                                    }];
                                 }];
-                                [self presentViewController:alert animated:YES completion:nil];
+                                [weakSelf presentViewController:alert animated:YES completion:nil];
                             }];
                         }];
         }];
