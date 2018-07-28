@@ -1,13 +1,14 @@
 //
-//  RRTRSSFeedModel.h
+//  RSSFeedEntity+CoreDataClass.m
 //  RSSTestReader
 //
 //  Created by Yuto on 2018/07/28.
 //  Copyright © 2018年 Yuto. All rights reserved.
 //
+//
 
-#import <Foundation/Foundation.h>
+#import "RSSFeedEntity+CoreDataClass.h"
 
-@interface RRTRSSFeedModel : NSObject
+@implementation RSSFeedEntity
 
 @end

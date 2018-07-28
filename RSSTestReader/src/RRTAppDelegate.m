@@ -1,22 +1,29 @@
 //
-//  AppDelegate.m
+//  RRTAppDelegate.m
 //  RSSTestReader
 //
 //  Created by Yuto on 2018/07/28.
 //  Copyright © 2018年 Yuto. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "RRTAppDelegate.h"
+#import <AFNetworkActivityLogger/AFNetworkActivityLogger.h>
 
-@interface AppDelegate ()
+@interface RRTAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation RRTAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // CocoaLumberjack
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    // AFNetworkActivityLogger
+    [[AFNetworkActivityLogger sharedLogger] startLogging];
+    
     return YES;
 }
 

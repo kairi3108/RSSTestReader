@@ -103,6 +103,9 @@
                                     <constraint firstAttribute="width" secondItem="63o-U4-OQY" secondAttribute="height" multiplier="47:10" id="gQO-oV-R0B"/>
                                 </constraints>
                                 <state key="normal" title="キャンセル"/>
+                                <connections>
+                                    <action selector="buttonTaped:" destination="g3K-xx-QVa" eventType="touchUpInside" id="zNe-1k-GLJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LW4-1R-hJu" customClass="RRTCommonButton">
                                 <rect key="frame" x="206" y="245" width="141" height="30"/>
@@ -110,6 +113,9 @@
                                     <constraint firstAttribute="width" secondItem="LW4-1R-hJu" secondAttribute="height" multiplier="47:10" id="XY8-cR-4Ik"/>
                                 </constraints>
                                 <state key="normal" title="追加"/>
+                                <connections>
+                                    <action selector="buttonTaped:" destination="g3K-xx-QVa" eventType="touchUpInside" id="IPa-mf-YsJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -135,6 +141,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z3j-hw-7Os"/>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="LW4-1R-hJu" id="PxB-9v-ZFC"/>
+                        <outlet property="cancelButton" destination="63o-U4-OQY" id="qMM-bj-he5"/>
+                        <outlet property="titleView" destination="q20-AR-azv" id="7nJ-B5-DSO"/>
+                        <outlet property="urlView" destination="imS-iD-f26" id="KLa-ZV-0dq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVQ-r5-mpo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -174,7 +186,7 @@
         <!--Loading View Controller-->
         <scene sceneID="fhT-f5-Ths">
             <objects>
-                <viewController storyboardIdentifier="RRTLoadingViewController" modalPresentationStyle="overCurrentContext" id="B3s-gu-560" customClass="RRTLoadingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RRTLoadingViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="B3s-gu-560" customClass="RRTLoadingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JZ0-Zu-Iny">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

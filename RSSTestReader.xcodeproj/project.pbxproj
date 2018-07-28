@@ -8,26 +8,50 @@
 
 /* Begin PBXBuildFile section */
 		0674B65A6717B47C62988A61 /* libPods-RSSTestReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7326B3890B99EBF5FE285192 /* libPods-RSSTestReader.a */; };
+		1380F17F210C96BC00F9A572 /* RSSFeedEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F17C210C96BC00F9A572 /* RSSFeedEntity+CoreDataClass.m */; };
+		1380F180210C96BC00F9A572 /* RSSFeedEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F17E210C96BC00F9A572 /* RSSFeedEntity+CoreDataProperties.m */; };
+		1380F183210CA60C00F9A572 /* RRTNetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F182210CA60C00F9A572 /* RRTNetworkController.m */; };
+		1380F186210CA65B00F9A572 /* RRTNetworkRequestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F185210CA65B00F9A572 /* RRTNetworkRequestEntity.m */; };
+		1380F189210CA6DA00F9A572 /* RRTNetworkResponseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F188210CA6DA00F9A572 /* RRTNetworkResponseEntity.m */; };
+		1380F18C210CA98400F9A572 /* RRTNetworkErrorEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F18B210CA98400F9A572 /* RRTNetworkErrorEntity.m */; };
+		1380F18F210CB13800F9A572 /* RRTNetworkRSSRequestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F18E210CB13800F9A572 /* RRTNetworkRSSRequestEntity.m */; };
+		1380F194210CBD2D00F9A572 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F193210CBD2D00F9A572 /* XMLReader.m */; };
 		13D6FC08210B713C00B7FFD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D6FC06210B713C00B7FFD0 /* Main.storyboard */; };
 		13D6FC0B210B713C00B7FFD0 /* RSSTestReader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC09210B713C00B7FFD0 /* RSSTestReader.xcdatamodeld */; };
 		13D6FC0D210B714000B7FFD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D6FC0C210B714000B7FFD0 /* Assets.xcassets */; };
 		13D6FC10210B714000B7FFD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D6FC0E210B714000B7FFD0 /* LaunchScreen.storyboard */; };
 		13D6FC13210B714000B7FFD0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC12210B714000B7FFD0 /* main.m */; };
 		13D6FC21210B74A200B7FFD0 /* RRTFeedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC1E210B74A200B7FFD0 /* RRTFeedListViewController.m */; };
-		13D6FC22210B74A200B7FFD0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC1F210B74A200B7FFD0 /* AppDelegate.m */; };
+		13D6FC22210B74A200B7FFD0 /* RRTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC1F210B74A200B7FFD0 /* RRTAppDelegate.m */; };
 		13D6FC26210B74E800B7FFD0 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 13D6FC25210B74E800B7FFD0 /* Config.xcconfig */; };
 		13D6FC2A210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC28210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.m */; };
 		13D6FC2B210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D6FC29210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.xib */; };
-		13D6FC2E210B769400B7FFD0 /* RRTRSSFeedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC2D210B769400B7FFD0 /* RRTRSSFeedModel.m */; };
 		13D6FC31210B77CF00B7FFD0 /* RRTFeedEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC30210B77CF00B7FFD0 /* RRTFeedEditViewController.m */; };
 		13D6FC34210B783300B7FFD0 /* RRTSelectArticleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC33210B783300B7FFD0 /* RRTSelectArticleTableViewController.m */; };
 		13D6FC37210B78C700B7FFD0 /* RRTArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC36210B78C700B7FFD0 /* RRTArticleViewController.m */; };
 		13D6FC3A210B78FD00B7FFD0 /* RRTLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC39210B78FD00B7FFD0 /* RRTLoadingViewController.m */; };
 		13D6FC3D210B861B00B7FFD0 /* RRTCommonButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC3C210B861B00B7FFD0 /* RRTCommonButton.m */; };
+		13D6FC40210C8C0200B7FFD0 /* RRTAlertViewControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC3F210C8C0200B7FFD0 /* RRTAlertViewControllerManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0340163B4701C6FE29F408C3 /* Pods-RSSTestReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSSTestReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-RSSTestReader/Pods-RSSTestReader.release.xcconfig"; sourceTree = "<group>"; };
+		1380F17B210C96BC00F9A572 /* RSSFeedEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSSFeedEntity+CoreDataClass.h"; sourceTree = "<group>"; };
+		1380F17C210C96BC00F9A572 /* RSSFeedEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RSSFeedEntity+CoreDataClass.m"; sourceTree = "<group>"; };
+		1380F17D210C96BC00F9A572 /* RSSFeedEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSSFeedEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		1380F17E210C96BC00F9A572 /* RSSFeedEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RSSFeedEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		1380F181210CA60C00F9A572 /* RRTNetworkController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTNetworkController.h; sourceTree = "<group>"; };
+		1380F182210CA60C00F9A572 /* RRTNetworkController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTNetworkController.m; sourceTree = "<group>"; };
+		1380F184210CA65B00F9A572 /* RRTNetworkRequestEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTNetworkRequestEntity.h; sourceTree = "<group>"; };
+		1380F185210CA65B00F9A572 /* RRTNetworkRequestEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTNetworkRequestEntity.m; sourceTree = "<group>"; };
+		1380F187210CA6DA00F9A572 /* RRTNetworkResponseEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTNetworkResponseEntity.h; sourceTree = "<group>"; };
+		1380F188210CA6DA00F9A572 /* RRTNetworkResponseEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTNetworkResponseEntity.m; sourceTree = "<group>"; };
+		1380F18A210CA98400F9A572 /* RRTNetworkErrorEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTNetworkErrorEntity.h; sourceTree = "<group>"; };
+		1380F18B210CA98400F9A572 /* RRTNetworkErrorEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTNetworkErrorEntity.m; sourceTree = "<group>"; };
+		1380F18D210CB13800F9A572 /* RRTNetworkRSSRequestEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTNetworkRSSRequestEntity.h; sourceTree = "<group>"; };
+		1380F18E210CB13800F9A572 /* RRTNetworkRSSRequestEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTNetworkRSSRequestEntity.m; sourceTree = "<group>"; };
+		1380F192210CBD2D00F9A572 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		1380F193210CBD2D00F9A572 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 		13D6FBFD210B713C00B7FFD0 /* RSSTestReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSTestReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D6FC07210B713C00B7FFD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13D6FC0A210B713C00B7FFD0 /* RSSTestReader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RSSTestReader.xcdatamodel; sourceTree = "<group>"; };
@@ -35,16 +59,14 @@
 		13D6FC0F210B714000B7FFD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13D6FC11210B714000B7FFD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13D6FC12210B714000B7FFD0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		13D6FC1A210B74A200B7FFD0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = src/AppDelegate.h; sourceTree = "<group>"; };
+		13D6FC1A210B74A200B7FFD0 /* RRTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RRTAppDelegate.h; path = src/RRTAppDelegate.h; sourceTree = "<group>"; };
 		13D6FC1D210B74A200B7FFD0 /* RRTFeedListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRTFeedListViewController.h; sourceTree = "<group>"; };
 		13D6FC1E210B74A200B7FFD0 /* RRTFeedListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTFeedListViewController.m; sourceTree = "<group>"; };
-		13D6FC1F210B74A200B7FFD0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = src/AppDelegate.m; sourceTree = "<group>"; };
+		13D6FC1F210B74A200B7FFD0 /* RRTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RRTAppDelegate.m; path = src/RRTAppDelegate.m; sourceTree = "<group>"; };
 		13D6FC25210B74E800B7FFD0 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		13D6FC27210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTRSSFeedCellTableViewCell.h; sourceTree = "<group>"; };
 		13D6FC28210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTRSSFeedCellTableViewCell.m; sourceTree = "<group>"; };
 		13D6FC29210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRTRSSFeedCellTableViewCell.xib; sourceTree = "<group>"; };
-		13D6FC2C210B769400B7FFD0 /* RRTRSSFeedModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTRSSFeedModel.h; sourceTree = "<group>"; };
-		13D6FC2D210B769400B7FFD0 /* RRTRSSFeedModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTRSSFeedModel.m; sourceTree = "<group>"; };
 		13D6FC2F210B77CF00B7FFD0 /* RRTFeedEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTFeedEditViewController.h; sourceTree = "<group>"; };
 		13D6FC30210B77CF00B7FFD0 /* RRTFeedEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTFeedEditViewController.m; sourceTree = "<group>"; };
 		13D6FC32210B783300B7FFD0 /* RRTSelectArticleTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTSelectArticleTableViewController.h; sourceTree = "<group>"; };
@@ -55,6 +77,9 @@
 		13D6FC39210B78FD00B7FFD0 /* RRTLoadingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTLoadingViewController.m; sourceTree = "<group>"; };
 		13D6FC3B210B861B00B7FFD0 /* RRTCommonButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTCommonButton.h; sourceTree = "<group>"; };
 		13D6FC3C210B861B00B7FFD0 /* RRTCommonButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTCommonButton.m; sourceTree = "<group>"; };
+		13D6FC3E210C8C0200B7FFD0 /* RRTAlertViewControllerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTAlertViewControllerManager.h; sourceTree = "<group>"; };
+		13D6FC3F210C8C0200B7FFD0 /* RRTAlertViewControllerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTAlertViewControllerManager.m; sourceTree = "<group>"; };
+		13D6FC41210C8F8100B7FFD0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		7326B3890B99EBF5FE285192 /* libPods-RSSTestReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RSSTestReader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0ED18C95944B07776FC96D /* Pods-RSSTestReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSSTestReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RSSTestReader/Pods-RSSTestReader.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +96,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1380F190210CBD2D00F9A572 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				1380F191210CBD2D00F9A572 /* XMLReader */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		1380F191210CBD2D00F9A572 /* XMLReader */ = {
+			isa = PBXGroup;
+			children = (
+				1380F192210CBD2D00F9A572 /* XMLReader.h */,
+				1380F193210CBD2D00F9A572 /* XMLReader.m */,
+			);
+			path = XMLReader;
+			sourceTree = "<group>";
+		};
 		13D6FBF4210B713C00B7FFD0 = {
 			isa = PBXGroup;
 			children = (
@@ -92,8 +134,9 @@
 		13D6FBFF210B713C00B7FFD0 /* RSSTestReader */ = {
 			isa = PBXGroup;
 			children = (
-				13D6FC1A210B74A200B7FFD0 /* AppDelegate.h */,
-				13D6FC1F210B74A200B7FFD0 /* AppDelegate.m */,
+				1380F190210CBD2D00F9A572 /* lib */,
+				13D6FC1A210B74A200B7FFD0 /* RRTAppDelegate.h */,
+				13D6FC1F210B74A200B7FFD0 /* RRTAppDelegate.m */,
 				13D6FC19210B74A200B7FFD0 /* Model */,
 				13D6FC20210B74A200B7FFD0 /* Util */,
 				13D6FC1B210B74A200B7FFD0 /* View */,
@@ -112,8 +155,18 @@
 		13D6FC19210B74A200B7FFD0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				13D6FC2C210B769400B7FFD0 /* RRTRSSFeedModel.h */,
-				13D6FC2D210B769400B7FFD0 /* RRTRSSFeedModel.m */,
+				1380F17B210C96BC00F9A572 /* RSSFeedEntity+CoreDataClass.h */,
+				1380F17C210C96BC00F9A572 /* RSSFeedEntity+CoreDataClass.m */,
+				1380F17D210C96BC00F9A572 /* RSSFeedEntity+CoreDataProperties.h */,
+				1380F17E210C96BC00F9A572 /* RSSFeedEntity+CoreDataProperties.m */,
+				1380F184210CA65B00F9A572 /* RRTNetworkRequestEntity.h */,
+				1380F185210CA65B00F9A572 /* RRTNetworkRequestEntity.m */,
+				1380F187210CA6DA00F9A572 /* RRTNetworkResponseEntity.h */,
+				1380F188210CA6DA00F9A572 /* RRTNetworkResponseEntity.m */,
+				1380F18A210CA98400F9A572 /* RRTNetworkErrorEntity.h */,
+				1380F18B210CA98400F9A572 /* RRTNetworkErrorEntity.m */,
+				1380F18D210CB13800F9A572 /* RRTNetworkRSSRequestEntity.h */,
+				1380F18E210CB13800F9A572 /* RRTNetworkRSSRequestEntity.m */,
 			);
 			name = Model;
 			path = src/Model;
@@ -153,6 +206,11 @@
 		13D6FC20210B74A200B7FFD0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				13D6FC41210C8F8100B7FFD0 /* PrefixHeader.pch */,
+				13D6FC3E210C8C0200B7FFD0 /* RRTAlertViewControllerManager.h */,
+				13D6FC3F210C8C0200B7FFD0 /* RRTAlertViewControllerManager.m */,
+				1380F181210CA60C00F9A572 /* RRTNetworkController.h */,
+				1380F182210CA60C00F9A572 /* RRTNetworkController.m */,
 			);
 			name = Util;
 			path = src/Util;
@@ -271,14 +329,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				13D6FC3A210B78FD00B7FFD0 /* RRTLoadingViewController.m in Sources */,
-				13D6FC22210B74A200B7FFD0 /* AppDelegate.m in Sources */,
+				1380F194210CBD2D00F9A572 /* XMLReader.m in Sources */,
+				13D6FC22210B74A200B7FFD0 /* RRTAppDelegate.m in Sources */,
 				13D6FC3D210B861B00B7FFD0 /* RRTCommonButton.m in Sources */,
-				13D6FC2E210B769400B7FFD0 /* RRTRSSFeedModel.m in Sources */,
+				1380F189210CA6DA00F9A572 /* RRTNetworkResponseEntity.m in Sources */,
+				13D6FC40210C8C0200B7FFD0 /* RRTAlertViewControllerManager.m in Sources */,
 				13D6FC31210B77CF00B7FFD0 /* RRTFeedEditViewController.m in Sources */,
+				1380F17F210C96BC00F9A572 /* RSSFeedEntity+CoreDataClass.m in Sources */,
 				13D6FC34210B783300B7FFD0 /* RRTSelectArticleTableViewController.m in Sources */,
 				13D6FC21210B74A200B7FFD0 /* RRTFeedListViewController.m in Sources */,
 				13D6FC13210B714000B7FFD0 /* main.m in Sources */,
+				1380F180210C96BC00F9A572 /* RSSFeedEntity+CoreDataProperties.m in Sources */,
+				1380F18F210CB13800F9A572 /* RRTNetworkRSSRequestEntity.m in Sources */,
+				1380F18C210CA98400F9A572 /* RRTNetworkErrorEntity.m in Sources */,
 				13D6FC37210B78C700B7FFD0 /* RRTArticleViewController.m in Sources */,
+				1380F183210CA60C00F9A572 /* RRTNetworkController.m in Sources */,
+				1380F186210CA65B00F9A572 /* RRTNetworkRequestEntity.m in Sources */,
 				13D6FC2A210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.m in Sources */,
 				13D6FC0B210B713C00B7FFD0 /* RSSTestReader.xcdatamodeld in Sources */,
 			);
@@ -348,6 +414,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = RSSTestReader/src/Util/PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -405,6 +472,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = RSSTestReader/src/Util/PrefixHeader.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

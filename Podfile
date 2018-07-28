@@ -8,5 +8,8 @@ target 'RSSTestReader' do
   # Pods for RSSTestReader
     
     pod 'AFNetworking'
+    pod 'MagicalRecord'
+    pod 'CocoaLumberjack'
+    pod 'AFNetworkActivityLogger'
     
 end

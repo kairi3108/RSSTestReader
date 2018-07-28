@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  RRTAppDelegate.h
 //  RSSTestReader
 //
 //  Created by Yuto on 2018/07/28.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface RRTAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
