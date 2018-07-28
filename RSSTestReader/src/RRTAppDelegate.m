@@ -8,6 +8,7 @@
 
 #import "RRTAppDelegate.h"
 #import <AFNetworkActivityLogger/AFNetworkActivityLogger.h>
+#import <MagicalRecord/MagicalRecord.h>
 
 @interface RRTAppDelegate ()
 
@@ -23,6 +24,10 @@
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     // AFNetworkActivityLogger
     [[AFNetworkActivityLogger sharedLogger] startLogging];
+    
+    // MagicalRecord
+    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/rss_feed.sqlite"];
+    [MagicalRecord setupCoreDataStackWithStoreAtURL:[NSURL fileURLWithPath:path]];
     
     return YES;
 }
@@ -54,6 +59,9 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+    
+    // MagicalRecord
+    [MagicalRecord cleanUp];
 }
 
 

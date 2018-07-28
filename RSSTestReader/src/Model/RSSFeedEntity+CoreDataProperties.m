@@ -19,4 +19,9 @@
 @dynamic title;
 @dynamic url;
 
+- (void)setupNextPrimaryKey {
+    NSArray <RSSFeedEntity *>*obj = [RSSFeedEntity MR_findAllWithPredicate:[NSPredicate predicateWithFormat:@"SELF.idNumber == %@.@max.idNumber"]];
+    self.idNumber = [[obj firstObject] idNumber] + 1;
+}
+
 @end

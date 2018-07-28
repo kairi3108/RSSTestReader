@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *title;
 @property (nullable, nonatomic, copy) NSString *url;
 
+- (void)setupNextPrimaryKey;
+
 @end
 
 NS_ASSUME_NONNULL_END

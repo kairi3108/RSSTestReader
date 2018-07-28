@@ -11,6 +11,7 @@
 #import "RRTAlertViewControllerManager.h"
 #import "RRTNetworkController.h"
 #import "RRTNetworkRSSRequestEntity.h"
+#import "RSSFeedEntity+CoreDataProperties.h"
 
 @interface RRTFeedEditViewController ()
 
@@ -37,15 +38,50 @@
         [self presentViewController:loading animated:YES completion:^{
             // 通信
             RRTNetworkController *controller = [RRTNetworkController sharedController];
-            RRTNetworkRequestEntity *request = [RRTNetworkRSSRequestEntity request:[NSURL URLWithString:@"http://getnews.jp/feed"]];
+#ifdef DUMMY
+            NSString *urlStr = @"http://getnews.jp/feed";
+#else
+            NSString *urlStr = self.urlView.text;
+#endif
+            RRTNetworkRequestEntity *request = [RRTNetworkRSSRequestEntity request:[NSURL URLWithString:urlStr]];
             [controller request:request
                         success:^(RRTNetworkResponseEntity *entity) {
-                            DDLogDebug(@"request : %@", entity);
+//                            DDLogDebug(@"request : %@", entity);
                             // saveObj
+                            // タイトル
+                            NSString *title = weakSelf.titleView.text;
+                            if (title == nil || title.length == 0) {
+                                NSDictionary *rss = [entity.object objectForKey:@"rss"];
+                                if (rss && [rss isKindOfClass:[NSDictionary class]]) {
+                                    NSDictionary *channels = [rss objectForKey:@"channel"];
+                                    if (channels && [channels isKindOfClass:[NSDictionary class]]) {
+                                        NSDictionary *titleDic = [channels objectForKey:@"title"];
+                                        if (titleDic && [titleDic isKindOfClass:[NSDictionary class]]) {
+                                            title = [titleDic objectForKey:@"text"];
+                                        } else {
+                                            title = @"未設定";
+                                        }
+                                    } else {
+                                        title = @"未設定";
+                                    }
+                                } else {
+                                    title = @"未設定";
+                                }
+                            }
                             
-                            // dissmiss & back
-                            [loading dismissViewControllerAnimated:YES completion:^{
-                                [weakSelf.navigationController popViewControllerAnimated:YES];
+                            [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+                                // save
+                                RSSFeedEntity *feed = [RSSFeedEntity MR_createEntityInContext:localContext];
+                                [feed setupNextPrimaryKey];
+                                feed.title = title;
+                                feed.url = request.url.absoluteString;
+                                
+                            } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
+                                DDLogDebug(@"Coredata result %@, Error : %@", (contextDidSave ? @"SAVE" : @"D'ONT SAVE"), [error description]);
+                                // dissmiss & back
+                                [loading dismissViewControllerAnimated:YES completion:^{
+                                    [weakSelf.navigationController popViewControllerAnimated:YES];
+                                }];
                             }];
                         } failed:^(RRTNetworkErrorEntity *entity) {
                             DDLogError(@"error : %@", entity);
@@ -61,6 +97,7 @@
                                                            animated:YES
                                                          completion:nil];
                                 }];
+                                [self presentViewController:alert animated:YES completion:nil];
                             }];
                         }];
         }];

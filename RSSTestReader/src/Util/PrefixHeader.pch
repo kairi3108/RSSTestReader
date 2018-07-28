@@ -11,6 +11,7 @@
 
 // Imports
 #import <CocoaLumberjack/CocoaLumberjack.h>
+#import <MagicalRecord/MagicalRecord.h>
 
 // CocoaLumberJack
 //const int LOG_LEVEL_DEF = DDLogLevelDebug;
