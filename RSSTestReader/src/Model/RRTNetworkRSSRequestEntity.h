@@ -10,4 +10,8 @@
 
 @interface RRTNetworkRSSRequestEntity : RRTNetworkRequestEntity
 
+extern NSString *kRSSRequestEntityKeyTitle;
+extern NSString *kRSSRequestEntityKeyURL;
+extern NSString *kRSSRequestEntityKeyFavicon;
+
 @end

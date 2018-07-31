@@ -6,7 +6,7 @@
 //  Copyright © 2018年 Yuto. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "RRTNetworkController.h"
 
 @protocol AFURLRequestSerialization;
 @protocol AFURLResponseSerialization;
@@ -22,6 +22,8 @@
 
 - (instancetype)init:(NSURL *)url;
 - (BOOL)canRequest;
+
+- (void)GET:(onSuccessBlock)success failed:(onFailedBlock)failed;
 
 - (id)responseParse:(id)base;
 

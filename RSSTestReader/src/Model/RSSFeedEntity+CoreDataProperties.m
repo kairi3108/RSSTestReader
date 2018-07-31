@@ -18,6 +18,7 @@
 @dynamic idNumber;
 @dynamic title;
 @dynamic url;
+@dynamic favicon;
 
 - (void)setupNextPrimaryKey {
     NSArray <RSSFeedEntity *>*obj = [RSSFeedEntity MR_findAllWithPredicate:[NSPredicate predicateWithFormat:@"SELF.idNumber == %@.@max.idNumber"]];

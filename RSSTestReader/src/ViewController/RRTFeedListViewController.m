@@ -52,6 +52,11 @@
     RSSFeedEntity *entity = [self.visibleArray objectAtIndex:indexPath.row];
     cell.titleView.text = entity.title;
     cell.urlView.text = entity.url;
+    UIImage *image = nil;
+    if (entity.favicon) {
+        image = [UIImage imageWithData:entity.favicon];
+    }
+    [cell.thumbnail setImage:image];
     return cell;
 }
 
@@ -71,7 +76,7 @@
                                                       [entity MR_deleteEntityInContext:localContext];
                                                   } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
                                                       DDLogDebug(@"Coredata result %@, Error : %@", (contextDidSave ? @"SAVE" : @"D'ONT SAVE"), [error description]);
-                                                      self.visibleArray = [RSSFeedEntity MR_findAll];
+                                                      weakSelf.visibleArray = [RSSFeedEntity MR_findAll];
                                                       [weakSelf.tableView reloadData];
                                                   }];
                                               }],

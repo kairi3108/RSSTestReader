@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) int16_t idNumber;
 @property (nullable, nonatomic, copy) NSString *title;
 @property (nullable, nonatomic, copy) NSString *url;
+@property (nullable, nonatomic, copy) NSData *favicon;
 
 - (void)setupNextPrimaryKey;
 

@@ -13,6 +13,8 @@
 #import "RRTNetworkRSSRequestEntity.h"
 #import "RSSFeedEntity+CoreDataProperties.h"
 
+#define DUMMY
+
 @interface RRTFeedEditViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *urlView;
@@ -37,81 +39,67 @@
         RRTLoadingViewController *loading = [alertManager loadingViewController:self.storyboard];
         [self presentViewController:loading animated:YES completion:^{
             // 通信
-            RRTNetworkController *controller = [RRTNetworkController sharedController];
 #ifdef DUMMY
             NSString *urlStr = @"http://getnews.jp/feed";
 #else
             NSString *urlStr = self.urlView.text;
 #endif
             RRTNetworkRequestEntity *request = [RRTNetworkRSSRequestEntity request:[NSURL URLWithString:urlStr]];
-            [controller request:request
-                        success:^(RRTNetworkResponseEntity *entity) {
-//                            DDLogDebug(@"request : %@", entity);
-                            // saveObj
-                            // タイトル
-                            NSString *title = weakSelf.titleView.text;
-                            if (title == nil || title.length == 0) {
-                                NSDictionary *rss = [entity.object objectForKey:@"rss"];
-                                if (rss && [rss isKindOfClass:[NSDictionary class]]) {
-                                    NSDictionary *channels = [rss objectForKey:@"channel"];
-                                    if (channels && [channels isKindOfClass:[NSDictionary class]]) {
-                                        NSDictionary *titleDic = [channels objectForKey:@"title"];
-                                        if (titleDic && [titleDic isKindOfClass:[NSDictionary class]]) {
-                                            title = [titleDic objectForKey:@"text"];
-                                        } else {
-                                            title = @"未設定";
-                                        }
-                                    } else {
-                                        title = @"未設定";
-                                    }
-                                } else {
-                                    title = @"未設定";
-                                }
-                            }
+            [request GET:^(RRTNetworkResponseEntity *entity) {
+                NSDictionary *dict = entity.object;
+                
+                DDLogDebug(@"request : %@", dict);
+                // saveObj
+                // タイトル
+                NSString *title = [dict objectForKey:kRSSRequestEntityKeyTitle];
+                if (title == nil || title.length == 0) {
+                    title = @"未設定";
+                }
+                
+                [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+                    // save
+                    RSSFeedEntity *feed = [RSSFeedEntity MR_createEntityInContext:localContext];
+                    [feed setupNextPrimaryKey];
+                    feed.title = title;
+                    feed.url = [dict objectForKey:kRSSRequestEntityKeyURL];
+                    feed.favicon = [dict objectForKey:kRSSRequestEntityKeyFavicon];
+                    
+                } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
+                    DDLogDebug(@"Coredata result %@, Error : %@", (contextDidSave ? @"SAVE" : @"DON'T SAVE"), [error description]);
+                    // dissmiss & back
+                    [loading dismissViewControllerAnimated:YES completion:^{
+                        [weakSelf.navigationController popViewControllerAnimated:YES];
+                    }];
+                }];
+            } failed:^(RRTNetworkErrorEntity *entity) {
+                DDLogError(@"error : %@", entity);
+                [loading dismissViewControllerAnimated:YES completion:^{
+                    UIAlertController *alert = [alertManager networkErrorAlertControllerOnAddFeed:^(UIAlertAction *alertAction) {
+                        // OK
+                    } addAction:^(UIAlertAction *alertAction) {
+                        // Add Anyway
+                        // タイトル
+                        NSString *title = weakSelf.titleView.text;
+                        if (title == nil || title.length == 0) {
+                            title = @"未設定";
+                        }
+                        
+                        [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+                            // save
+                            RSSFeedEntity *feed = [RSSFeedEntity MR_createEntityInContext:localContext];
+                            [feed setupNextPrimaryKey];
+                            feed.title = title;
+                            feed.url = request.url.absoluteString;
                             
-                            [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
-                                // save
-                                RSSFeedEntity *feed = [RSSFeedEntity MR_createEntityInContext:localContext];
-                                [feed setupNextPrimaryKey];
-                                feed.title = title;
-                                feed.url = request.url.absoluteString;
-                                
-                            } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
-                                DDLogDebug(@"Coredata result %@, Error : %@", (contextDidSave ? @"SAVE" : @"D'ONT SAVE"), [error description]);
-                                // dissmiss & back
-                                [loading dismissViewControllerAnimated:YES completion:^{
-                                    [weakSelf.navigationController popViewControllerAnimated:YES];
-                                }];
-                            }];
-                        } failed:^(RRTNetworkErrorEntity *entity) {
-                            DDLogError(@"error : %@", entity);
-                            [loading dismissViewControllerAnimated:YES completion:^{
-                                UIAlertController *alert = [alertManager networkErrorAlertControllerOnAddFeed:^(UIAlertAction *alertAction) {
-                                    // OK
-                                } addAction:^(UIAlertAction *alertAction) {
-                                    // Add Anyway
-                                    // タイトル
-                                    NSString *title = weakSelf.titleView.text;
-                                    if (title == nil || title.length == 0) {
-                                        title = @"未設定";
-                                    }
-                                    
-                                    [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
-                                        // save
-                                        RSSFeedEntity *feed = [RSSFeedEntity MR_createEntityInContext:localContext];
-                                        [feed setupNextPrimaryKey];
-                                        feed.title = title;
-                                        feed.url = request.url.absoluteString;
-                                        
-                                    } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
-                                        DDLogDebug(@"Coredata result %@, Error : %@", (contextDidSave ? @"SAVE" : @"D'ONT SAVE"), [error description]);
-                                        // dissmiss & back
-                                        [weakSelf.navigationController popViewControllerAnimated:YES];
-                                    }];
-                                }];
-                                [weakSelf presentViewController:alert animated:YES completion:nil];
-                            }];
+                        } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
+                            DDLogDebug(@"Coredata result %@, Error : %@", (contextDidSave ? @"SAVE" : @"DON'T SAVE"), [error description]);
+                            // dissmiss & back
+                            [weakSelf.navigationController popViewControllerAnimated:YES];
                         }];
+                    }];
+                    [weakSelf presentViewController:alert animated:YES completion:nil];
+                }];
+            }];
         }];
     } else if (self.cancelButton == sender) {
         // back

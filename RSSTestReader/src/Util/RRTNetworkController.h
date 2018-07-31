@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RRTNetworkRequestEntity.h"
 #import "RRTNetworkResponseEntity.h"
 #import "RRTNetworkErrorEntity.h"
 

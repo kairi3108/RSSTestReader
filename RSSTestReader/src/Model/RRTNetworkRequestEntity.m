@@ -41,6 +41,20 @@
     return ret;
 }
 
+- (void)GET:(onSuccessBlock)success failed:(onFailedBlock)failed {
+    RRTNetworkController *controller = [RRTNetworkController sharedController];
+    [controller request:self
+                success:^(RRTNetworkResponseEntity *entity) {
+                    if (success) {
+                        success(entity);
+                    }
+                } failed:^(RRTNetworkErrorEntity *entity) {
+                    if (failed) {
+                        failed(entity);
+                    }
+                }];
+}
+
 - (id)responseParse:(id)base {
     return base;
 }

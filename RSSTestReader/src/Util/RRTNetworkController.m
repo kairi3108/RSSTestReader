@@ -7,6 +7,7 @@
 //
 
 #import "RRTNetworkController.h"
+#import "RRTNetworkRequestEntity.h"
 #import <AFNetworking/AFNetworking.h>
 
 @implementation RRTNetworkController
