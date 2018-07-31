@@ -16,6 +16,12 @@
 		1380F18C210CA98400F9A572 /* RRTNetworkErrorEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F18B210CA98400F9A572 /* RRTNetworkErrorEntity.m */; };
 		1380F18F210CB13800F9A572 /* RRTNetworkRSSRequestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F18E210CB13800F9A572 /* RRTNetworkRSSRequestEntity.m */; };
 		1380F194210CBD2D00F9A572 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F193210CBD2D00F9A572 /* XMLReader.m */; };
+		1380F197210F24EA00F9A572 /* RRTFaviconRequestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F196210F24EA00F9A572 /* RRTFaviconRequestEntity.m */; };
+		1380F19B2110A9D500F9A572 /* RRTFeedArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F1992110A9D500F9A572 /* RRTFeedArticleTableViewCell.m */; };
+		1380F19C2110A9D500F9A572 /* RRTFeedArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1380F19A2110A9D500F9A572 /* RRTFeedArticleTableViewCell.xib */; };
+		1380F19F2110AC4D00F9A572 /* RRTRSSArticleRequestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F19E2110AC4D00F9A572 /* RRTRSSArticleRequestEntity.m */; };
+		1380F1A22110AEC100F9A572 /* RRTRSSAirticleEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F1A12110AEC100F9A572 /* RRTRSSAirticleEntity.m */; };
+		1380F1A52110D3B700F9A572 /* RRTRSSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F1A42110D3B700F9A572 /* RRTRSSUtils.m */; };
 		13D6FC08210B713C00B7FFD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D6FC06210B713C00B7FFD0 /* Main.storyboard */; };
 		13D6FC0B210B713C00B7FFD0 /* RSSTestReader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC09210B713C00B7FFD0 /* RSSTestReader.xcdatamodeld */; };
 		13D6FC0D210B714000B7FFD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D6FC0C210B714000B7FFD0 /* Assets.xcassets */; };
@@ -52,6 +58,17 @@
 		1380F18E210CB13800F9A572 /* RRTNetworkRSSRequestEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTNetworkRSSRequestEntity.m; sourceTree = "<group>"; };
 		1380F192210CBD2D00F9A572 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
 		1380F193210CBD2D00F9A572 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		1380F195210F24EA00F9A572 /* RRTFaviconRequestEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTFaviconRequestEntity.h; sourceTree = "<group>"; };
+		1380F196210F24EA00F9A572 /* RRTFaviconRequestEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTFaviconRequestEntity.m; sourceTree = "<group>"; };
+		1380F1982110A9D500F9A572 /* RRTFeedArticleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTFeedArticleTableViewCell.h; sourceTree = "<group>"; };
+		1380F1992110A9D500F9A572 /* RRTFeedArticleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTFeedArticleTableViewCell.m; sourceTree = "<group>"; };
+		1380F19A2110A9D500F9A572 /* RRTFeedArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RRTFeedArticleTableViewCell.xib; sourceTree = "<group>"; };
+		1380F19D2110AC4D00F9A572 /* RRTRSSArticleRequestEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTRSSArticleRequestEntity.h; sourceTree = "<group>"; };
+		1380F19E2110AC4D00F9A572 /* RRTRSSArticleRequestEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTRSSArticleRequestEntity.m; sourceTree = "<group>"; };
+		1380F1A02110AEC100F9A572 /* RRTRSSAirticleEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTRSSAirticleEntity.h; sourceTree = "<group>"; };
+		1380F1A12110AEC100F9A572 /* RRTRSSAirticleEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTRSSAirticleEntity.m; sourceTree = "<group>"; };
+		1380F1A32110D3B700F9A572 /* RRTRSSUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTRSSUtils.h; sourceTree = "<group>"; };
+		1380F1A42110D3B700F9A572 /* RRTRSSUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTRSSUtils.m; sourceTree = "<group>"; };
 		13D6FBFD210B713C00B7FFD0 /* RSSTestReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSTestReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D6FC07210B713C00B7FFD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13D6FC0A210B713C00B7FFD0 /* RSSTestReader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RSSTestReader.xcdatamodel; sourceTree = "<group>"; };
@@ -167,6 +184,12 @@
 				1380F18B210CA98400F9A572 /* RRTNetworkErrorEntity.m */,
 				1380F18D210CB13800F9A572 /* RRTNetworkRSSRequestEntity.h */,
 				1380F18E210CB13800F9A572 /* RRTNetworkRSSRequestEntity.m */,
+				1380F195210F24EA00F9A572 /* RRTFaviconRequestEntity.h */,
+				1380F196210F24EA00F9A572 /* RRTFaviconRequestEntity.m */,
+				1380F19D2110AC4D00F9A572 /* RRTRSSArticleRequestEntity.h */,
+				1380F19E2110AC4D00F9A572 /* RRTRSSArticleRequestEntity.m */,
+				1380F1A02110AEC100F9A572 /* RRTRSSAirticleEntity.h */,
+				1380F1A12110AEC100F9A572 /* RRTRSSAirticleEntity.m */,
 			);
 			name = Model;
 			path = src/Model;
@@ -180,6 +203,9 @@
 				13D6FC29210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.xib */,
 				13D6FC3B210B861B00B7FFD0 /* RRTCommonButton.h */,
 				13D6FC3C210B861B00B7FFD0 /* RRTCommonButton.m */,
+				1380F1982110A9D500F9A572 /* RRTFeedArticleTableViewCell.h */,
+				1380F1992110A9D500F9A572 /* RRTFeedArticleTableViewCell.m */,
+				1380F19A2110A9D500F9A572 /* RRTFeedArticleTableViewCell.xib */,
 			);
 			name = View;
 			path = src/View;
@@ -211,6 +237,8 @@
 				13D6FC3F210C8C0200B7FFD0 /* RRTAlertViewControllerManager.m */,
 				1380F181210CA60C00F9A572 /* RRTNetworkController.h */,
 				1380F182210CA60C00F9A572 /* RRTNetworkController.m */,
+				1380F1A32110D3B700F9A572 /* RRTRSSUtils.h */,
+				1380F1A42110D3B700F9A572 /* RRTRSSUtils.m */,
 			);
 			name = Util;
 			path = src/Util;
@@ -297,6 +325,7 @@
 				13D6FC10210B714000B7FFD0 /* LaunchScreen.storyboard in Resources */,
 				13D6FC0D210B714000B7FFD0 /* Assets.xcassets in Resources */,
 				13D6FC08210B713C00B7FFD0 /* Main.storyboard in Resources */,
+				1380F19C2110A9D500F9A572 /* RRTFeedArticleTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,8 +368,13 @@
 				13D6FC34210B783300B7FFD0 /* RRTSelectArticleTableViewController.m in Sources */,
 				13D6FC21210B74A200B7FFD0 /* RRTFeedListViewController.m in Sources */,
 				13D6FC13210B714000B7FFD0 /* main.m in Sources */,
+				1380F197210F24EA00F9A572 /* RRTFaviconRequestEntity.m in Sources */,
+				1380F19B2110A9D500F9A572 /* RRTFeedArticleTableViewCell.m in Sources */,
 				1380F180210C96BC00F9A572 /* RSSFeedEntity+CoreDataProperties.m in Sources */,
 				1380F18F210CB13800F9A572 /* RRTNetworkRSSRequestEntity.m in Sources */,
+				1380F19F2110AC4D00F9A572 /* RRTRSSArticleRequestEntity.m in Sources */,
+				1380F1A22110AEC100F9A572 /* RRTRSSAirticleEntity.m in Sources */,
+				1380F1A52110D3B700F9A572 /* RRTRSSUtils.m in Sources */,
 				1380F18C210CA98400F9A572 /* RRTNetworkErrorEntity.m in Sources */,
 				13D6FC37210B78C700B7FFD0 /* RRTArticleViewController.m in Sources */,
 				1380F183210CA60C00F9A572 /* RRTNetworkController.m in Sources */,

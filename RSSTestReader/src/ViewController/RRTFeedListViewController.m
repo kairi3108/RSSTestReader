@@ -9,6 +9,8 @@
 #import "RRTFeedListViewController.h"
 #import "RSSFeedEntity+CoreDataProperties.h"
 #import "RRTRSSFeedCellTableViewCell.h"
+#import "RRTFeedEditViewController.h"
+#import "RRTSelectArticleTableViewController.h"
 
 @interface RRTFeedListViewController ()
 
@@ -34,8 +36,18 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    self.visibleArray = [RSSFeedEntity MR_findAll];
+    self.visibleArray = [RSSFeedEntity MR_findAllSortedBy:@"idNumber" ascending:NO];
     [self.tableView reloadData];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"RSSFeedEditSegue"]) {
+        RRTFeedEditViewController *next = segue.destinationViewController;
+        next.targetEntity = sender;
+    } else if ([[segue identifier] isEqualToString:@"SelectArticleSegue"]) {
+        RRTSelectArticleTableViewController *next = segue.destinationViewController;
+        next.targetEntity = sender;
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -52,6 +64,7 @@
     RSSFeedEntity *entity = [self.visibleArray objectAtIndex:indexPath.row];
     cell.titleView.text = entity.title;
     cell.urlView.text = entity.url;
+    cell.rssVersion.text = entity.rssVersion;
     UIImage *image = nil;
     if (entity.favicon) {
         image = [UIImage imageWithData:entity.favicon];
@@ -62,6 +75,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    RSSFeedEntity *entity = [self.visibleArray objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"SelectArticleSegue" sender:entity];
 }
 
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -81,10 +97,11 @@
                                                   }];
                                               }],
              [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal
-                                                title:@"Action"
+                                                title:@"Edit"
                                               handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
                                                   // own action
                                                   // edit
+                                                  [weakSelf performSegueWithIdentifier:@"RSSFeedEditSegue" sender:[weakSelf.visibleArray objectAtIndex:indexPath.row]];
                                               }],
              ];
 }

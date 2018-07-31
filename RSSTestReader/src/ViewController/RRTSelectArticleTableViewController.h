@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class RSSFeedEntity;
+
 @interface RRTSelectArticleTableViewController : UITableViewController
+
+@property RSSFeedEntity *targetEntity;
 
 @end

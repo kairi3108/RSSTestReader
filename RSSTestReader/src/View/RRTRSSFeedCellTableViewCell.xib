@@ -14,22 +14,22 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="RRTRSSFeedCellTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="KGk-i7-Jjw" customClass="RRTRSSFeedCellTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="86.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wVl-AS-qff">
-                        <rect key="frame" x="16" y="11" width="65" height="65"/>
+                        <rect key="frame" x="16" y="12.5" width="65" height="65"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="wVl-AS-qff" secondAttribute="height" multiplier="1:1" id="8ps-ss-Kkz"/>
                             <constraint firstAttribute="height" constant="65" id="oR2-Io-SYw"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="TITLE" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MwN-ra-YYA">
-                        <rect key="frame" x="95" y="11" width="209" height="25"/>
+                        <rect key="frame" x="95" y="15.5" width="209" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -40,26 +40,49 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2a5-zV-fvk">
+                        <rect key="frame" x="290" y="67" width="14" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="cs9-X4-Xsj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="highlightedColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSS Version : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFI-68-PCd">
+                        <rect key="frame" x="216" y="67" width="68" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="LWc-2A-3AM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="MwN-ra-YYA" firstAttribute="leading" secondItem="wVl-AS-qff" secondAttribute="trailing" constant="14" id="0Px-Th-q2S"/>
                     <constraint firstItem="MwN-ra-YYA" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="0nZ-d8-H6p"/>
-                    <constraint firstItem="wVl-AS-qff" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="QkS-B8-bYc"/>
+                    <constraint firstItem="2a5-zV-fvk" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="9wB-dp-smz"/>
+                    <constraint firstItem="2a5-zV-fvk" firstAttribute="top" secondItem="AH3-hV-8kP" secondAttribute="bottom" constant="6" id="Adp-mY-dxz"/>
+                    <constraint firstItem="MwN-ra-YYA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4.5" id="EXu-Oa-Y0L"/>
                     <constraint firstItem="AH3-hV-8kP" firstAttribute="top" secondItem="MwN-ra-YYA" secondAttribute="bottom" constant="8.5" id="TXi-vI-j0j"/>
+                    <constraint firstItem="2a5-zV-fvk" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="VHH-Hj-nvM"/>
+                    <constraint firstItem="2a5-zV-fvk" firstAttribute="leading" secondItem="FFI-68-PCd" secondAttribute="trailing" constant="6" id="VtL-hH-tDg"/>
                     <constraint firstItem="AH3-hV-8kP" firstAttribute="leading" secondItem="wVl-AS-qff" secondAttribute="trailing" constant="23" id="YrU-pk-AWc"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="AH3-hV-8kP" secondAttribute="bottom" constant="15" id="ciP-ea-0gc"/>
-                    <constraint firstItem="MwN-ra-YYA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="d5a-w3-PmI"/>
+                    <constraint firstItem="FFI-68-PCd" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="eJL-iO-etb"/>
                     <constraint firstItem="wVl-AS-qff" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="nwR-yy-K8E"/>
                     <constraint firstItem="AH3-hV-8kP" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="pJV-jj-HTV"/>
+                    <constraint firstItem="wVl-AS-qff" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="pZj-Oa-lwU"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="rssVersion" destination="2a5-zV-fvk" id="8vc-NH-ohj"/>
                 <outlet property="thumbnail" destination="wVl-AS-qff" id="0HW-tT-l3v"/>
                 <outlet property="titleView" destination="MwN-ra-YYA" id="dpX-tW-iqf"/>
                 <outlet property="urlView" destination="AH3-hV-8kP" id="8aO-In-HdS"/>
             </connections>
-            <point key="canvasLocation" x="25" y="73.5"/>
+            <point key="canvasLocation" x="25" y="75"/>
         </tableViewCell>
     </objects>
 </document>

@@ -14,5 +14,6 @@ IB_DESIGNABLE
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnail;
 @property (weak, nonatomic) IBOutlet UILabel *titleView;
 @property (weak, nonatomic) IBOutlet UILabel *urlView;
+@property (weak, nonatomic) IBOutlet UILabel *rssVersion;
 
 @end

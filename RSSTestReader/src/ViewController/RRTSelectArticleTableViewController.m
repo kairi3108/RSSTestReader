@@ -7,8 +7,16 @@
 //
 
 #import "RRTSelectArticleTableViewController.h"
+#import "RRTFeedArticleTableViewCell.h"
+#import "RRTRSSArticleRequestEntity.h"
+#import "RSSFeedEntity+CoreDataProperties.h"
+#import "RRTRSSAirticleEntity.h"
+#import "RRTArticleViewController.h"
+#import "RRTAlertViewControllerManager.h"
 
 @interface RRTSelectArticleTableViewController ()
+
+@property NSArray *visibleCell;
 
 @end
 
@@ -17,82 +25,91 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self.tableView registerNib:[UINib nibWithNibName:@"RRTFeedArticleTableViewCell"
+                                               bundle:[NSBundle mainBundle]]
+         forCellReuseIdentifier:@"Cell"];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // とりあえず空を入れておく
+    self.visibleCell = @[];
+    // タイトルセット
+    self.title = self.targetEntity.title;
+    
+    // ひっぱる
+    UIRefreshControl *control = [[UIRefreshControl alloc] init];
+    [control addTarget:self action:@selector(refreshContolPulled:) forControlEvents:UIControlEventValueChanged];
+    self.tableView.refreshControl = control;
+
+    // だしておく
+    DDLogDebug(@"Selected : %@", self.targetEntity);
+    [self reloadRSSFeeds];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"WebViewSegue"]) {
+        RRTArticleViewController *next = segue.destinationViewController;
+        next.targetEntity = sender;
+    }
+}
+
+- (void)refreshContolPulled:(id)sender {
+    [self reloadRSSFeeds];
+}
+
+- (void)reloadRSSFeeds {
+    // 読み込み中
+    __weak typeof(self) weakSelf = self;
+    RRTLoadingViewController *loadingView = [[RRTAlertViewControllerManager sharedManager] loadingViewController:self.storyboard];
+    [self presentViewController:loadingView animated:YES completion:^{
+        // 取りに行く
+        RRTRSSArticleRequestEntity *request = [RRTRSSArticleRequestEntity request:[NSURL URLWithString:self.targetEntity.url]];
+        [request GET:^(RRTNetworkResponseEntity *entity) {
+            
+            // close
+            [loadingView dismissViewControllerAnimated:YES completion:^{
+                DDLogDebug(@"Get Success : %ld airticles", (NSUInteger)((NSArray *)entity.object).count);
+                // Pull close
+                [weakSelf.tableView.refreshControl endRefreshing];
+                // View Reload
+                weakSelf.visibleCell = [entity object];
+                [weakSelf.tableView reloadData];
+            }];
+        } failed:^(RRTNetworkErrorEntity *entity) {
+            // close
+            [loadingView dismissViewControllerAnimated:YES completion:^{
+                DDLogDebug(@"Error : %@", entity);
+                // 通信えらー
+                UIAlertController *alert = [[RRTAlertViewControllerManager sharedManager] networkErrorAlertController:nil];
+                [weakSelf presentViewController:alert animated:YES completion:nil];
+            }];
+        }];
+    }];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return [self.visibleCell count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    RRTFeedArticleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"
+                                                                        forIndexPath:indexPath];
+    RRTRSSAirticleEntity *airticle = [self.visibleCell objectAtIndex:indexPath.row];
+    [cell.descriptionView setText:airticle.title];
+    [cell.dateView setText:[airticle stringVisibleString]];
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    // View
+    [self performSegueWithIdentifier:@"WebViewSegue" sender:[self.visibleCell objectAtIndex:indexPath.row]];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

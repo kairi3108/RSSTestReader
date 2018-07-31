@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class RSSFeedEntity;
+
 @interface RRTFeedEditViewController : UIViewController
+
+@property RSSFeedEntity *targetEntity;
 
 @end

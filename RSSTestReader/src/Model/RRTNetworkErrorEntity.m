@@ -10,6 +10,8 @@
 #import "RRTNetworkRequestEntity.h"
 
 NSString *kErrorDomainSuffix = @"error";
+NSString *kErrorMessage = @"message";
+NSString *kErrorObjects = @"objects";
 NSInteger kErrorCodeAbnormal = -1;
 
 @implementation RRTNetworkErrorEntity
@@ -25,9 +27,25 @@ NSInteger kErrorCodeAbnormal = -1;
 + (instancetype)errorCannotExecuteRequest:(NSURL *)url {
     RRTNetworkErrorEntity *error = [[RRTNetworkErrorEntity alloc] init];
     error.url = url;
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:@"Request Error" forKey:kErrorMessage];
     error.error = [NSError errorWithDomain:[[self class] errorDomain]
                                       code:kErrorCodeAbnormal
-                                  userInfo:nil];
+                                  userInfo:dict];
+    return error;
+}
+
++ (instancetype)errorRSSNotSupportVersion:(NSURL *)url xml:(NSDictionary *)xml {
+    RRTNetworkErrorEntity *error = [[RRTNetworkErrorEntity alloc] init];
+    error.url = url;
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:@"Version Error" forKey:kErrorMessage];
+    if (xml) {
+        [dict setObject:xml forKey:kErrorObjects];
+    }
+    error.error = [NSError errorWithDomain:[[self class] errorDomain]
+                                      code:kErrorCodeAbnormal
+                                  userInfo:dict];
     return error;
 }
 

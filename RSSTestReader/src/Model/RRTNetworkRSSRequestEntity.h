@@ -13,5 +13,6 @@
 extern NSString *kRSSRequestEntityKeyTitle;
 extern NSString *kRSSRequestEntityKeyURL;
 extern NSString *kRSSRequestEntityKeyFavicon;
+extern NSString *kRSSRequestEntityKeyRSSVersion;
 
 @end

@@ -9,9 +9,13 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+// Defines
+//#define ENABLE_ATOM
+
 // Imports
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import <MagicalRecord/MagicalRecord.h>
+#import "RRTRSSUtils.h"
 
 // CocoaLumberJack
 //const int LOG_LEVEL_DEF = DDLogLevelDebug;

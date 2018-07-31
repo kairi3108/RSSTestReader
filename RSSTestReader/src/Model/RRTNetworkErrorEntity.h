@@ -17,6 +17,7 @@
 @property NSError *error;
 
 + (instancetype)errorCannotExecuteRequest:(NSURL *)url;
++ (instancetype)errorRSSNotSupportVersion:(NSURL *)url xml:(NSDictionary *)xml;
 + (instancetype) error:(RRTNetworkRequestEntity *)request response:(NSURLResponse *)response error:(NSError *)error;
 
 @end
