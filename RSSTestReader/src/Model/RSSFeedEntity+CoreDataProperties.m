@@ -22,8 +22,18 @@
 @dynamic rssVersion;
 
 - (void)setupNextPrimaryKey {
-    NSArray <RSSFeedEntity *>*obj = [RSSFeedEntity MR_findAllWithPredicate:[NSPredicate predicateWithFormat:@"SELF.idNumber == %@.@max.idNumber"]];
-    self.idNumber = [[obj firstObject] idNumber] + 1;
+    if ([RSSFeedEntity MR_countOfEntities] == 0) {
+        self.idNumber = 1;
+    } else {
+        NSArray <RSSFeedEntity *>*obj = [RSSFeedEntity MR_findAll];
+        NSInteger nowMax = 0;
+        for (RSSFeedEntity *entity in obj) {
+            if (nowMax < entity.idNumber) {
+                nowMax = entity.idNumber;
+            }
+        }
+        self.idNumber = nowMax + 1;
+    }
 }
 
 @end

@@ -1,0 +1,49 @@
+{
+    "RSSPreset" : [
+        {
+            "title" : "はてなブックマーク",
+            "url" : "http://b.hatena.ne.jp/hotentry/it.rss"
+        },
+        {
+            "title" : "GIGAZINE",
+            "url" : "http://feed.rssad.jp/rss/gigazine/rss_2.0"
+        },
+        {
+            "title" : "ギズモード・ジャパン",
+            "url" : "http://feed.rssad.jp/rss/gigazine/rss_2.0"
+        },
+        {
+            "title" : "TechCrunch Japan",
+            "url" : "http://jp.techcrunch.com/feed/"
+        },
+        {
+            "title" : "CNET Japan",
+            "url" : "http://feed.japan.cnet.com/rss/index.rdf"
+        },
+        {
+            "title" : "ITmedia",
+            "url" : "http://rss.itmedia.co.jp/rss/1.0/topstory.xml"
+        },
+        {
+            "title" : "ガジェット通信",
+            "url" : "http://getnews.jp/feed"
+        },
+        {
+            "title" : "ZDNet Japan",
+            "url" : "http://feed.japan.zdnet.com/rss/index.rdf"
+        },
+        {
+            "title" : "東洋経済オンライン",
+            "url" : "http://toyokeizai.net/list/feed/rss"
+        },
+        {
+            "title" : "ライフハッカー",
+            "url" : "http://www.lifehacker.jp/index.xml"
+        },
+        {
+            "title" : "アルファモザイク",
+            "url" : "http://alfalfalfa.com/index.rdf"
+        }
+    ],
+    "version" : "1.0"
+}

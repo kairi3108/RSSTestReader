@@ -25,9 +25,9 @@
             NSStringFromClass([RRTLoadingViewController class])];
 }
 
-- (UIAlertController *)networkErrorAlertController:(void (^)(UIAlertAction *))action {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network Error"
-                                                                   message:@"Error"
+- (UIAlertController *)commonErrorAlertController:(NSString *)title message:(NSString *)message action:(void (^)(UIAlertAction *))action {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:message
                                                             preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"OK"
                                               style:UIAlertActionStyleDefault
@@ -35,10 +35,35 @@
     return alert;
 }
 
+- (UIAlertController *)commonErrorAlertController:(NSString *)message action:(void (^)(UIAlertAction *))action {
+    return [self commonErrorAlertController:@"Error"
+                                    message:message
+                                     action:action];
+}
+
+- (UIAlertController *)networkErrorAlertController:(void (^)(UIAlertAction *))action {
+    UIAlertController *alert = [self commonErrorAlertController:@"Network Error"
+                                                        message:@"Error"
+                                                         action:action];
+    return alert;
+}
+
 - (UIAlertController *)networkErrorAlertControllerOnAddFeed:(void (^)(UIAlertAction *))action addAction:(void (^)(UIAlertAction *))addAction {
     UIAlertController *alert = [self networkErrorAlertController:action];
     // add anyway
     [alert addAction:[UIAlertAction actionWithTitle:@"Add Anyway" style:UIAlertActionStyleDefault handler:addAction]];
+    return alert;
+}
+
+- (UIAlertController *)rssFeedResetAlertController:(void (^)(UIAlertAction *))resetAction {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Feed Reset"
+                                                                   message:@"Preset JSON URL"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        
+    }];
+    [alert addAction:[UIAlertAction actionWithTitle:@"!!!RESET!!!" style:UIAlertActionStyleDestructive handler:resetAction]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
     return alert;
 }
 

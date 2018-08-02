@@ -15,8 +15,14 @@
 
 - (RRTLoadingViewController *)loadingViewController:(UIStoryboard *)storyboard;
 
+- (UIAlertController *)commonErrorAlertController:(NSString *)title message:(NSString *)message action:(void (^)(UIAlertAction *))action;
+
+- (UIAlertController *)commonErrorAlertController:(NSString *)message action:(void (^)(UIAlertAction *))action;
+
 - (UIAlertController *)networkErrorAlertController:(void (^)(UIAlertAction *))action;
 
 - (UIAlertController *)networkErrorAlertControllerOnAddFeed:(void (^)(UIAlertAction *))action addAction:(void (^)(UIAlertAction *))addAction;
+
+- (UIAlertController *)rssFeedResetAlertController:(void (^)(UIAlertAction *))resetAction;
 
 @end

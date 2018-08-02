@@ -22,6 +22,10 @@
 		1380F19F2110AC4D00F9A572 /* RRTRSSArticleRequestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F19E2110AC4D00F9A572 /* RRTRSSArticleRequestEntity.m */; };
 		1380F1A22110AEC100F9A572 /* RRTRSSAirticleEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F1A12110AEC100F9A572 /* RRTRSSAirticleEntity.m */; };
 		1380F1A52110D3B700F9A572 /* RRTRSSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F1A42110D3B700F9A572 /* RRTRSSUtils.m */; };
+		1380F1A821134C6500F9A572 /* Acknowledgement.html in Resources */ = {isa = PBXBuildFile; fileRef = 1380F1A721134C6500F9A572 /* Acknowledgement.html */; };
+		1380F1AB21134EC900F9A572 /* RRTSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F1AA21134EC900F9A572 /* RRTSettingTableViewController.m */; };
+		1380F1AE21134EE300F9A572 /* RRTAcknowledgementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380F1AD21134EE300F9A572 /* RRTAcknowledgementViewController.m */; };
+		1380F1B02113606300F9A572 /* Preset.json in Resources */ = {isa = PBXBuildFile; fileRef = 1380F1AF2113606200F9A572 /* Preset.json */; };
 		13D6FC08210B713C00B7FFD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D6FC06210B713C00B7FFD0 /* Main.storyboard */; };
 		13D6FC0B210B713C00B7FFD0 /* RSSTestReader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13D6FC09210B713C00B7FFD0 /* RSSTestReader.xcdatamodeld */; };
 		13D6FC0D210B714000B7FFD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D6FC0C210B714000B7FFD0 /* Assets.xcassets */; };
@@ -69,6 +73,12 @@
 		1380F1A12110AEC100F9A572 /* RRTRSSAirticleEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTRSSAirticleEntity.m; sourceTree = "<group>"; };
 		1380F1A32110D3B700F9A572 /* RRTRSSUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTRSSUtils.h; sourceTree = "<group>"; };
 		1380F1A42110D3B700F9A572 /* RRTRSSUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTRSSUtils.m; sourceTree = "<group>"; };
+		1380F1A721134C6500F9A572 /* Acknowledgement.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Acknowledgement.html; sourceTree = "<group>"; };
+		1380F1A921134EC900F9A572 /* RRTSettingTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTSettingTableViewController.h; sourceTree = "<group>"; };
+		1380F1AA21134EC900F9A572 /* RRTSettingTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTSettingTableViewController.m; sourceTree = "<group>"; };
+		1380F1AC21134EE300F9A572 /* RRTAcknowledgementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRTAcknowledgementViewController.h; sourceTree = "<group>"; };
+		1380F1AD21134EE300F9A572 /* RRTAcknowledgementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRTAcknowledgementViewController.m; sourceTree = "<group>"; };
+		1380F1AF2113606200F9A572 /* Preset.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Preset.json; sourceTree = "<group>"; };
 		13D6FBFD210B713C00B7FFD0 /* RSSTestReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSTestReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D6FC07210B713C00B7FFD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13D6FC0A210B713C00B7FFD0 /* RSSTestReader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RSSTestReader.xcdatamodel; sourceTree = "<group>"; };
@@ -130,6 +140,15 @@
 			path = XMLReader;
 			sourceTree = "<group>";
 		};
+		1380F1A621134C4200F9A572 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				1380F1AF2113606200F9A572 /* Preset.json */,
+				1380F1A721134C6500F9A572 /* Acknowledgement.html */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		13D6FBF4210B713C00B7FFD0 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +170,7 @@
 		13D6FBFF210B713C00B7FFD0 /* RSSTestReader */ = {
 			isa = PBXGroup;
 			children = (
+				1380F1A621134C4200F9A572 /* Support */,
 				1380F190210CBD2D00F9A572 /* lib */,
 				13D6FC1A210B74A200B7FFD0 /* RRTAppDelegate.h */,
 				13D6FC1F210B74A200B7FFD0 /* RRTAppDelegate.m */,
@@ -224,6 +244,10 @@
 				13D6FC36210B78C700B7FFD0 /* RRTArticleViewController.m */,
 				13D6FC38210B78FD00B7FFD0 /* RRTLoadingViewController.h */,
 				13D6FC39210B78FD00B7FFD0 /* RRTLoadingViewController.m */,
+				1380F1A921134EC900F9A572 /* RRTSettingTableViewController.h */,
+				1380F1AA21134EC900F9A572 /* RRTSettingTableViewController.m */,
+				1380F1AC21134EE300F9A572 /* RRTAcknowledgementViewController.h */,
+				1380F1AD21134EE300F9A572 /* RRTAcknowledgementViewController.m */,
 			);
 			name = ViewController;
 			path = src/ViewController;
@@ -320,11 +344,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1380F1A821134C6500F9A572 /* Acknowledgement.html in Resources */,
 				13D6FC2B210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.xib in Resources */,
 				13D6FC26210B74E800B7FFD0 /* Config.xcconfig in Resources */,
 				13D6FC10210B714000B7FFD0 /* LaunchScreen.storyboard in Resources */,
 				13D6FC0D210B714000B7FFD0 /* Assets.xcassets in Resources */,
 				13D6FC08210B713C00B7FFD0 /* Main.storyboard in Resources */,
+				1380F1B02113606300F9A572 /* Preset.json in Resources */,
 				1380F19C2110A9D500F9A572 /* RRTFeedArticleTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,6 +407,8 @@
 				1380F186210CA65B00F9A572 /* RRTNetworkRequestEntity.m in Sources */,
 				13D6FC2A210B754600B7FFD0 /* RRTRSSFeedCellTableViewCell.m in Sources */,
 				13D6FC0B210B713C00B7FFD0 /* RSSTestReader.xcdatamodeld in Sources */,
+				1380F1AE21134EE300F9A572 /* RRTAcknowledgementViewController.m in Sources */,
+				1380F1AB21134EC900F9A572 /* RRTSettingTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,52 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Acknowledgement-->
+        <scene sceneID="xiq-da-H0C">
+            <objects>
+                <viewController storyboardIdentifier="RRTAcknowledgementViewController" title="Acknowledgement" id="WnY-i6-ADu" customClass="RRTAcknowledgementViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QdB-7S-rq2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="8Vk-uk-lWF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H5F-bo-XYi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1541.5999999999999" y="-511.39430284857576"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="7u9-4d-OpW">
+            <objects>
+                <tableViewController storyboardIdentifier="RRTSettingTableViewController" title="Setting" id="G7v-Zd-wXH" customClass="RRTSettingTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="3GC-xf-04v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="pDa-Fr-KyY">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pDa-Fr-KyY" id="z3H-U3-Ylv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="G7v-Zd-wXH" id="iOV-8O-eni"/>
+                            <outlet property="delegate" destination="G7v-Zd-wXH" id="Kyi-LZ-zFd"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="WnY-i6-ADu" kind="show" identifier="AcknowledgementSegue" id="xch-1G-eP2"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EbD-IS-t4Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="510" y="-511"/>
+        </scene>
         <!--RSS Reader-->
         <scene sceneID="hW3-pg-aDq">
             <objects>
@@ -35,6 +81,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="RSS Reader" id="p55-O5-rCl">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="action" id="cdZ-7R-wZ9">
+                            <connections>
+                                <segue destination="G7v-Zd-wXH" kind="show" id="I7G-QV-1vy"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6V5-2X-rh2">
                             <connections>
                                 <segue destination="g3K-xx-QVa" kind="show" identifier="RSSFeedAddSegue" id="2UG-lu-SSs"/>

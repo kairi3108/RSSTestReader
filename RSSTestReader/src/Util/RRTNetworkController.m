@@ -32,7 +32,9 @@
     }
     AFHTTPSessionManager *sessinManager = [AFHTTPSessionManager manager];
     sessinManager.requestSerializer = request.requestSerializer;
+    sessinManager.requestSerializer.timeoutInterval = 10;
     sessinManager.responseSerializer = request.responseSerializer;
+    DDLogDebug(@"GET Request");
     [sessinManager GET:request.url.absoluteString
             parameters:request.parameters
               progress:nil
