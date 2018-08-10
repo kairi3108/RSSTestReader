@@ -13,8 +13,6 @@
 #import "RRTNetworkRSSRequestEntity.h"
 #import "RSSFeedEntity+CoreDataProperties.h"
 
-//#define DUMMY
-
 @interface RRTFeedEditViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *urlView;
@@ -30,7 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-#ifdef DUMMY
+#ifdef DUMMY_MODE
     self.urlView.placeholder = @"http://getnews.jp/feed";
 #endif
     

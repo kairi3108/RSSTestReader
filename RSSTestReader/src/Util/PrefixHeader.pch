@@ -11,6 +11,7 @@
 
 // Defines
 //#define ENABLE_ATOM
+//#define DUMMY_MODE
 
 // Imports
 #import <CocoaLumberjack/CocoaLumberjack.h>

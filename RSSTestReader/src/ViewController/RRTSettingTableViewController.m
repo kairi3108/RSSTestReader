@@ -94,7 +94,7 @@ typedef void(^eventBlock)(void);
     __block UIAlertController *alert = [[RRTAlertViewControllerManager sharedManager] rssFeedResetAlertController:^(UIAlertAction *action) {
         UITextField *field = [[alert textFields] firstObject];
         NSString *url = [field text];
-#ifdef DEBUG
+#ifdef DUMMY_MODE
         url = @"https://gist.githubusercontent.com/kairi3108/3d158062219dbf7f98acb7743b4a23c6/raw/40e6a23113e8d3c1b7cfd5d1e44a54bfa9f9538c/Sample.json";
 #endif
         if (url == nil || url.length == 0) {
